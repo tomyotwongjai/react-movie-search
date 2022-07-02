@@ -1,0 +1,20 @@
+@import "../../common/color.scss";
+
+.header {
+    height: 72px;
+    padding: 0px 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $secondary-color;
+}
+
+.title {
+    color: $font-primary-color;
+    font-weight: 600;
+    font-size: 30px;
+}
+.logo-image, .logo-image img{
+    height: 30px;
+    width: 30px;
+}
