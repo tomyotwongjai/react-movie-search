@@ -1,3 +1,18 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open-Sans", sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+body {
+  background-image: linear-gradient(rgba(0,8,51,0.9), rgba(0,8,51,0.9)), url(images/background.jpg);
+}
+
+.container {
+  margin: 0px 40px;
 }

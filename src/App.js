@@ -6,11 +6,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Routes>
-          {/* <Route exact path="/" element={<Home />} />
-          <Route path="/movie/:imdbID" element={<MovieDetail />} />
-          <Route path="*" element={<PageNotFound />} /> */}
-        </Routes>
+        <Header />
+        <div className="container">
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/movie/:imdbID" element={<MovieDetail />} />
+            <Route path="*" element={<PageNotFound />} /> 
+          </Routes>
+        </div>
+        <Footer />
       </Router>
     </div>
   );

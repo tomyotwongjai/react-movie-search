@@ -1,0 +1,29 @@
+@import '../../common/color.scss';
+
+.header {
+    display: flex;
+    height: 70px;
+    padding: 0px 40px;
+    justify-content: center;
+    align-items: center;
+}
+ .title{
+    font-size: 30px;
+    font-weight: 600;
+    color: $font-secondary-color; 
+ }
+
+hr{
+    border: 1px solid #fff;
+     width: 100%; 
+     margin: auto;
+}
+
+
+.header-logo,
+.header-logo img {
+    width: 50px;
+    height: 50px;
+    background-color: $font-secondary-color; 
+    border-radius: 40%;
+}

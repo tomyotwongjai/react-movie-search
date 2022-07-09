@@ -1,0 +1,1 @@
+export const MovieApi = process.env.REACT_APP_MOVIE_API;
