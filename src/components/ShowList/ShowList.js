@@ -2,6 +2,8 @@
 
 import React from "react";
 import { useSelector } from "react-redux";
+import Slider from "react-slick";
+import { settings } from "../../common/setting";
 import { getAllShows } from "../../features/ShowSlice/ShowSlice";
 import ShowCard from "../ShowCard/ShowCard";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +30,9 @@ function ShowList() {
 			</button>
 			<div className="show-list">
 				<h2>Shows</h2>
-				<div className="show-container">{renderShows}</div>
+				<div className="show-container">
+					<Slider {...settings}>{renderShows}</Slider>
+				</div>
 			</div>
 		</main>
 	);

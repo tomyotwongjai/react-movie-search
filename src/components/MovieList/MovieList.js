@@ -1,7 +1,9 @@
 /** @format */
 
 import React from "react";
+import Slider from "react-slick";
 import MovieCard from "../MovieCard/MovieCard";
+import { settings } from "../../common/setting";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { getAllMovies } from "../../features/MovieSlice/MovieSlice";
@@ -30,7 +32,9 @@ function MovieList() {
 			</button>
 			<div className="movie-list">
 				<h2>Movies</h2>
-				<div className="movie-container">{renderMovies}</div>
+				<div className="movie-container">
+					<Slider {...settings}>{renderMovies}</Slider>
+				</div>
 			</div>
 		</div>
 	);

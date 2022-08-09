@@ -33,8 +33,8 @@ const showSlice = createSlice({
 	name: "shows",
 	initialState,
 	reducers: {
-		addShows: (state, { payload }) => {
-			state.shows = payload;
+		removeSelectedShow: (state) => {
+			state.selectShow = {};
 		},
 	},
 	extraReducers: {
@@ -55,7 +55,7 @@ const showSlice = createSlice({
 	},
 });
 
-export const { addShows } = showSlice.actions;
+export const { removeSelectedShow } = showSlice.actions;
 export const getAllShows = (state) => state.shows.shows;
 export const getSelectedShow = (state) => state.shows.selectShow;
 export default showSlice.reducer;

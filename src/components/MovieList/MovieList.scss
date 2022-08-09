@@ -8,8 +8,21 @@
   }
 }
 
-.movie-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-gap: 15px;
+.to-movies {
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  background: #333;
+  color: #fff;
+
+  &:hover {
+      transform: scale(1.1);
+      transition: all 0.3s;
+  }
 }
+
+// .movie-container {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+//   grid-gap: 15px;
+// }

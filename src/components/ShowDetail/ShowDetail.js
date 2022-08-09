@@ -7,6 +7,7 @@ import "./ShowDetail.scss";
 import {
 	fetchAsyncShowDetail,
 	getSelectedShow,
+	removeSelectedShow,
 } from "../../features/ShowSlice/ShowSlice";
 
 function ShowDetails() {
@@ -18,6 +19,9 @@ function ShowDetails() {
 
 	useEffect(() => {
 		dispatch(fetchAsyncShowDetail(imdbID));
+		return () => {
+			dispatch(removeSelectedShow);
+		};
 	}, [dispatch, imdbID]);
 
 	return (
