@@ -1,19 +1,22 @@
-import {useEffect} from 'react'
-import { MovieList } from '../../components'
-import {useDispatch} from 'react-redux'
-import { fetchAsyncMovies } from '../../features/MovieSlice/MovieSlice'
+/** @format */
+
+import { useEffect } from "react";
+import { MovieList } from "../../components";
+import { useDispatch } from "react-redux";
+import { fetchAsyncMovies } from "../../features/MovieSlice/MovieSlice";
 
 function Movie() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-  dispatch(fetchAsyncMovies())
-  }, [dispatch])
+	const dispatch = useDispatch();
 
-  return (
-    <div>
-      <MovieList />
-    </div>
-  )
+	useEffect(() => {
+		dispatch(fetchAsyncMovies());
+	}, [dispatch]);
+
+	return (
+		<div>
+			<MovieList />
+		</div>
+	);
 }
 
-export default Movie
+export default Movie;
