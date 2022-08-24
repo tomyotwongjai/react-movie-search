@@ -6,10 +6,9 @@ import BaseApi from "../../common/apis/BaseApi";
 
 export const fetchAsyncShows = createAsyncThunk(
 	"shows/fetchAsyncShows",
-	async () => {
-		const ShowKey = "Friends";
+	async (term) => {
 		const response = await BaseApi.get(
-			`?apiKey=${MovieApi}&s=${ShowKey}&type=series`
+			`?apiKey=${MovieApi}&s=${term}&type=series`
 		);
 		return response.data;
 	}

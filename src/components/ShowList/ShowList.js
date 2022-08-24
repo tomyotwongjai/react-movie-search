@@ -1,11 +1,12 @@
 /** @format */
 
-import React from "react";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Slider from "react-slick";
 import { settings } from "../../common/setting";
 import { getAllShows } from "../../features/ShowSlice/ShowSlice";
 import ShowCard from "../ShowCard/ShowCard";
+import { fetchAsyncShows } from "../../features/ShowSlice/ShowSlice";
 import { useNavigate } from "react-router-dom";
 import "./ShowList.scss";
 
@@ -23,11 +24,33 @@ function ShowList() {
 			</div>
 		);
 
+	const [term, setTerm] = useState("");
+	const dispatch = useDispatch();
+	const submitHandler = (e) => {
+		e.preventDefault();
+		if (term === "") return alert("Please enter search term");
+		dispatch(fetchAsyncShows(term));
+		setTerm("");
+	};
+
 	return (
 		<main className="show-wrapper">
 			<button onClick={() => navigate("/movies")} className="to-movies">
 				Search Movies
 			</button>
+			<div className="search-bar">
+				<form onSubmit={submitHandler}>
+					<input
+						type="text"
+						value={term}
+						placeholder="search"
+						onChange={(e) => setTerm(e.target.value)}
+					/>
+					<button type="submit">
+						<i className="fa fa-search"></i>
+					</button>
+				</form>
+			</div>
 			<div className="show-list">
 				<h2>Shows</h2>
 				<div className="show-container">

@@ -7,9 +7,9 @@ import { fetchAsyncMovies } from "../../features/MovieSlice/MovieSlice";
 
 function Movie() {
 	const dispatch = useDispatch();
-
+	const movieText = "Harry";
 	useEffect(() => {
-		dispatch(fetchAsyncMovies());
+		dispatch(fetchAsyncMovies(movieText));
 	}, [dispatch]);
 
 	return (

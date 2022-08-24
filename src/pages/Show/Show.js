@@ -7,9 +7,9 @@ import { fetchAsyncShows } from "../../features/ShowSlice/ShowSlice";
 
 function Show() {
 	const dispatch = useDispatch();
-
+	const showText = "friends";
 	useEffect(() => {
-		dispatch(fetchAsyncShows());
+		dispatch(fetchAsyncShows(showText));
 	}, [dispatch]);
 	return (
 		<div>

@@ -6,10 +6,9 @@ import BaseApi from "../../common/apis/BaseApi";
 // Convert sychronus action creator to asynchronus action creator
 export const fetchAsyncMovies = createAsyncThunk(
 	"movies/fetchAsyncMovies",
-	async () => {
-		const movieText = "Harry";
+	async (term) => {
 		const response = await BaseApi.get(
-			`?apiKey=${MovieApi}&s=${movieText}&type=movie`
+			`?apiKey=${MovieApi}&s=${term}&type=movie`
 		);
 		return response.data;
 	}
